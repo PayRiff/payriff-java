@@ -1,8 +1,12 @@
 # Changelog
 
+## 0.1.3 (2026-10-07)
+
+- Fix the JitPack build (JitPack builds with Gradle 8.14).
+
 ## 0.1.2 (2026-10-07)
 
-- Fix the JitPack build.
+- JitPack build attempt; does not build there.
 
 ## 0.1.1 (2026-10-07)
 
