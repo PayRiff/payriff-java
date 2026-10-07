@@ -18,14 +18,14 @@ transactions, payouts and invoices.
 > }
 >
 > dependencies {
->     implementation 'com.github.PayRiff:payriff-java:v0.1.1'
+>     implementation 'com.github.PayRiff:payriff-java:v0.1.2'
 > }
 > ```
 
 Gradle:
 
 ```groovy
-implementation 'com.payriff:payriff-java:0.1.1'
+implementation 'com.payriff:payriff-java:0.1.2'
 ```
 
 Maven:
@@ -34,7 +34,7 @@ Maven:
 <dependency>
   <groupId>com.payriff</groupId>
   <artifactId>payriff-java</artifactId>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
 </dependency>
 ```
 

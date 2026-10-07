@@ -1,4 +1,7 @@
 jdk:
   - openjdk21
+before_install:
+  - sdk install gradle 9.2.1
+  - sdk use gradle 9.2.1
 install:
-  - ./gradlew publishToMavenLocal -x test
+  - gradle publishToMavenLocal -x test

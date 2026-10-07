@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 (2026-10-07)
+
+- Fix the JitPack build.
+
 ## 0.1.1 (2026-10-07)
 
 - Publishing setup for Maven Central and JitPack.
