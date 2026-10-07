@@ -1,18 +1,13 @@
 plugins {
     id 'java-library'
-    id 'maven-publish'
+    id 'com.vanniktech.maven.publish' version '0.37.0'
 }
 
 group = 'com.payriff'
-version = '0.1.0-SNAPSHOT'
+version = '0.1.1'
 
 repositories {
     mavenCentral()
-}
-
-java {
-    withSourcesJar()
-    withJavadocJar()
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -56,25 +51,33 @@ jar {
     }
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            pom {
-                name = 'Payriff Java SDK'
-                description = 'Java client for the Payriff merchant API'
-                url = 'https://github.com/payriff/payriff-java'
-                licenses {
-                    license {
-                        name = 'MIT License'
-                        url = 'https://opensource.org/licenses/MIT'
-                    }
-                }
-                scm {
-                    url = 'https://github.com/payriff/payriff-java'
-                    connection = 'scm:git:https://github.com/payriff/payriff-java.git'
-                }
+mavenPublishing {
+    publishToMavenCentral()
+    if (providers.gradleProperty('signingInMemoryKey').isPresent()) {
+        signAllPublications()
+    }
+    coordinates('com.payriff', 'payriff-java', version.toString())
+    pom {
+        name = 'Payriff Java SDK'
+        description = 'Java client for the Payriff merchant API'
+        url = 'https://github.com/PayRiff/payriff-java'
+        licenses {
+            license {
+                name = 'MIT License'
+                url = 'https://opensource.org/licenses/MIT'
             }
+        }
+        developers {
+            developer {
+                id = 'payriff'
+                name = 'Payriff'
+                url = 'https://payriff.com'
+            }
+        }
+        scm {
+            url = 'https://github.com/PayRiff/payriff-java'
+            connection = 'scm:git:https://github.com/PayRiff/payriff-java.git'
+            developerConnection = 'scm:git:ssh://git@github.com/PayRiff/payriff-java.git'
         }
     }
 }

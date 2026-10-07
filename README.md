@@ -9,12 +9,23 @@ transactions, payouts and invoices.
 
 ## Installation
 
-> The artifact is not yet published to Maven Central. Until then, build it from source (see below).
+> The artifact is not yet published to Maven Central. Until then, use JitPack:
+>
+> ```groovy
+> repositories {
+>     mavenCentral()
+>     maven { url 'https://jitpack.io' }
+> }
+>
+> dependencies {
+>     implementation 'com.github.PayRiff:payriff-java:v0.1.1'
+> }
+> ```
 
 Gradle:
 
 ```groovy
-implementation 'com.payriff:payriff-java:0.1.0'
+implementation 'com.payriff:payriff-java:0.1.1'
 ```
 
 Maven:
@@ -23,7 +34,7 @@ Maven:
 <dependency>
   <groupId>com.payriff</groupId>
   <artifactId>payriff-java</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
 </dependency>
 ```
 
