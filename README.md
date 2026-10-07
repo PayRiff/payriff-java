@@ -9,34 +9,44 @@ transactions, payouts and invoices.
 
 ## Installation
 
-> The artifact is not yet published to Maven Central. Until then, use JitPack:
->
-> ```groovy
-> repositories {
->     mavenCentral()
->     maven { url 'https://jitpack.io' }
-> }
->
-> dependencies {
->     implementation 'com.github.PayRiff:payriff-java:v0.1.3'
-> }
-> ```
+The SDK is served through [JitPack](https://jitpack.io/#PayRiff/payriff-java).
 
 Gradle:
 
 ```groovy
-implementation 'com.payriff:payriff-java:0.1.3'
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.PayRiff:payriff-java:v0.1.3'
+}
 ```
 
 Maven:
 
 ```xml
-<dependency>
-  <groupId>com.payriff</groupId>
-  <artifactId>payriff-java</artifactId>
-  <version>0.1.3</version>
-</dependency>
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+
+<dependencies>
+  <dependency>
+    <groupId>com.github.PayRiff</groupId>
+    <artifactId>payriff-java</artifactId>
+    <version>v0.1.3</version>
+  </dependency>
+</dependencies>
 ```
+
+All classes live in the `com.payriff.sdk` package (for example `com.payriff.sdk.PayriffClient`).
+
+> Maven Central publishing is coming. After that, the JitPack repository is no longer needed and the
+> coordinates become `com.payriff:payriff-java:0.1.3`.
 
 ## Quick start
 
